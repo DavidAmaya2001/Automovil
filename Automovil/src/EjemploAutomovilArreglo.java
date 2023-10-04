@@ -45,53 +45,40 @@ public class EjemploAutomovilArreglo {
     }
 
     static public void ImprimirDetalle(Automovil auto){
+        String color, tipo, conductor, motor,gasolina,ruedas = "";
+        int i = 0;
+
         System.out.println("=============================================================\n");
         System.out.println(auto);
         System.out.println("-------------------------------------------");
-        if(auto.getColor() != null){
-            System.out.println("Color: " + auto.getColor());
-        }
-        else{
-            System.out.print("\n");
-        }
-        if(auto.getTipo() != null){
-            System.out.println("-------------------------------------------");
-            System.out.println("Tipo de auto: " + auto.getTipo());
-        }
-        else{
-            System.out.print("\n");
-        }
-        if(auto.getConductor() != null){
-            System.out.println("-------------------------------------------");
-            System.out.println("Conductor del auto: " + auto.getConductor());
-        }
-        else{
-            System.out.print("\n");
-        }
-        if(auto.getMotor() != null){
-            System.out.println("-------------------------------------------");
-            System.out.println("Cilindrada del motor: " + auto.getMotor().getCilindrada());
-            System.out.println("Tipo de motor: " + auto.getMotor().getTipo());
-        }
-        else{
-            System.out.print("\n");
-        }
+        color = auto.getColor() != null ? "Color del auto: " + auto.getColor() + "\n" : "\n";
+        System.out.print(color);
+
         System.out.println("-------------------------------------------");
-        System.out.println("Capacidad del tanque de gasolina: " + auto.getEstanque().getCapacidad());
+        tipo = auto.getTipo() != null ? "Tipo de auto: " + auto.getTipo() + "\n" : "\n";
+        System.out.print(tipo);
+
+        System.out.println("-------------------------------------------");
+        conductor = auto.getConductor() != null ? "Conductor del auto: " + auto.getConductor() + "\n" : "\n";
+        System.out.print(conductor);
+
+        System.out.println("-------------------------------------------");
+        motor = auto.getMotor() != null ? "Cilindrada del motor: " + auto.getMotor().getCilindrada() + "\n" +
+                                          "Tipo de motor: " + auto.getMotor().getTipo() + "\n" : "\n";
+        System.out.print(motor);
+
+        System.out.println("-------------------------------------------");
+        gasolina = auto.getEstanque() != null ? "Capacidad del tanque de gasolina: " + auto.getEstanque().getCapacidad() + "\n" : "\n";
+        System.out.print(gasolina);
+
         System.out.println("-------------------------------------------");
         for(Rueda r: auto.getRuedas()){
-            if(r != null){
-                System.out.println("-------------------------------------------");
-                System.out.println("Fabricante de los neumaticos: " + r.getFabricante());
-                System.out.println("Tamaño del aro: " + r.getAro());
-                System.out.println("Ancho de los neumaticos: " + r.getAncho());
-            }
-            else{
-                System.out.print("\n");
-
-            }
+            ruedas = r !=null ? "Fabricante del neumático " + i + ": " + r.getFabricante() + "\n" +
+                                "Tamaño del aro " + i + ": " + r.getAro() + "\n" +
+                                "Ancho del neumático " + i + ": " + r.getAncho() + "\n" : "\n";
+            i++;
         }
-
+        System.out.print(ruedas);
 
     }
 }
