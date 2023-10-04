@@ -17,14 +17,12 @@ public class EjemploAutomovilArreglo {
         mazda.setConductor(pato);
 
         Persona bea = new Persona("Bea", "Gonzalez");
-        Automovil nissan = new Automovil("Nissan",
-                "Navara", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque());
+        Automovil nissan = new Automovil("Nissan", "Navara", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque());
         nissan.setConductor(bea);
         nissan.setTipo(TipoAutomovil.PICKUP);
 
         Persona lalo = new Persona("Lalo", "Mena");
-        Automovil suzuki = new Automovil("Suzuki",
-                "Vitara", Color.GRIS, new Motor(1.6, TipoMotor.GASOLINA), new Estanque(50));
+        Automovil suzuki = new Automovil("Suzuki", "Vitara", Color.GRIS, new Motor(1.6, TipoMotor.GASOLINA), new Estanque(50));
         suzuki.setConductor(lalo);
         suzuki.setColor(Color.AMARILLO);
         suzuki.setTipo(TipoAutomovil.SUV);
@@ -47,10 +45,55 @@ public class EjemploAutomovilArreglo {
     }
 
     static public void ImprimirDetalle(Automovil auto){
-        System.out.println("===========================");
+        System.out.println("=============================================================\n");
         System.out.println(auto);
-        System.out.println(auto.getColor());
-        System.out.println(auto.getTipo());
-        System.out.println(auto.getConductor());
+        System.out.println("-------------------------------------------");
+        if(auto.getColor() != null){
+            System.out.println("Color: " + auto.getColor());
+        }
+        else{
+            System.out.println("Color: \"Dato no disponible\".");
+        }
+        System.out.println("-------------------------------------------");
+        if(auto.getTipo() != null){
+            System.out.println("Tipo de auto: " + auto.getTipo());
+        }
+        else{
+            System.out.println("Tipo de auto: \"Dato no disponible\".");
+        }
+        System.out.println("-------------------------------------------");
+        if(auto.getConductor() != null){
+            System.out.println("Conductor del auto: " + auto.getConductor());
+        }
+        else{
+            System.out.println("Conductor del auto: \"Dato no disponible\".");
+        }
+        System.out.println("-------------------------------------------");
+        if(auto.getMotor() != null){
+            System.out.println("Cilindrada del motor: " + auto.getMotor().getCilindrada());
+            System.out.println("Tipo de motor: " + auto.getMotor().getTipo());
+        }
+        else{
+            System.out.println("Cilindrada del motor: \"Dato no disponible.\"");
+        }
+        System.out.println("-------------------------------------------");
+        System.out.println("Capacidad del tanque de gasolina: " + auto.getEstanque().getCapacidad());
+        System.out.println("-------------------------------------------");
+        for(Rueda r: auto.getRuedas()){
+            if(r != null){
+                System.out.println("Fabricante de los neumaticos: " + r.getFabricante());
+                System.out.println("Tamaño del aro: " + r.getAro());
+                System.out.println("Ancho de los neumaticos: " + r.getAncho());
+            }
+            else{
+                System.out.println("Neumáticos: \"Dato no disponible\".");
+                break;
+            }
+        }
+        System.out.println("-------------------------------------------");
+        System.out.println("La velocidad maxima en ciudad es de: " + Automovil.VELOCIDAD_MAX_CIUDAD);
+        System.out.println("Su aceleración maxima en ciudad es de: " +auto.acelerar(Automovil.VELOCIDAD_MAX_CIUDAD));
+
+
     }
 }
