@@ -52,47 +52,45 @@ public class EjemploAutomovilArreglo {
             System.out.println("Color: " + auto.getColor());
         }
         else{
-            System.out.println("Color: \"Dato no disponible\".");
+            System.out.print("\n");
         }
-        System.out.println("-------------------------------------------");
         if(auto.getTipo() != null){
+            System.out.println("-------------------------------------------");
             System.out.println("Tipo de auto: " + auto.getTipo());
         }
         else{
-            System.out.println("Tipo de auto: \"Dato no disponible\".");
+            System.out.print("\n");
         }
-        System.out.println("-------------------------------------------");
         if(auto.getConductor() != null){
+            System.out.println("-------------------------------------------");
             System.out.println("Conductor del auto: " + auto.getConductor());
         }
         else{
-            System.out.println("Conductor del auto: \"Dato no disponible\".");
+            System.out.print("\n");
         }
-        System.out.println("-------------------------------------------");
         if(auto.getMotor() != null){
+            System.out.println("-------------------------------------------");
             System.out.println("Cilindrada del motor: " + auto.getMotor().getCilindrada());
             System.out.println("Tipo de motor: " + auto.getMotor().getTipo());
         }
         else{
-            System.out.println("Cilindrada del motor: \"Dato no disponible.\"");
+            System.out.print("\n");
         }
         System.out.println("-------------------------------------------");
         System.out.println("Capacidad del tanque de gasolina: " + auto.getEstanque().getCapacidad());
         System.out.println("-------------------------------------------");
         for(Rueda r: auto.getRuedas()){
             if(r != null){
+                System.out.println("-------------------------------------------");
                 System.out.println("Fabricante de los neumaticos: " + r.getFabricante());
                 System.out.println("Tamaño del aro: " + r.getAro());
                 System.out.println("Ancho de los neumaticos: " + r.getAncho());
             }
             else{
-                System.out.println("Neumáticos: \"Dato no disponible\".");
-                break;
+                System.out.print("\n");
+
             }
         }
-        System.out.println("-------------------------------------------");
-        System.out.println("La velocidad maxima en ciudad es de: " + Automovil.VELOCIDAD_MAX_CIUDAD);
-        System.out.println("Su aceleración maxima en ciudad es de: " +auto.acelerar(Automovil.VELOCIDAD_MAX_CIUDAD));
 
 
     }
